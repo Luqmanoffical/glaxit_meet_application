@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT ;
 
 app.use(cors({
-  origin:[glaxit-meet-application-ro4a.vercel.app],
+  origin:[glaxit-meet-application.vercel.app],
   method: ["POST", "GET" , "PUT", "DELETE"],
   credentials: true}
 ));
