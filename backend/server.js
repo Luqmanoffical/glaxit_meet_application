@@ -17,6 +17,10 @@ app.use(cors({
   method: ["POST", "GET" , "PUT", "DELETE"],
   credentials: true}
 ));
+
+app.get("/", (req, res) => {
+  res.json("Hello World");
+});
 app.use(bodyParser.json());
 
 const mongoURI = process.env.MONGO_URI;
