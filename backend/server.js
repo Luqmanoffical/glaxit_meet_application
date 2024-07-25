@@ -12,7 +12,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ;
 
-app.use(cors());
+app.use(cors({
+  origin:["https//deploy-mern-1whq.vercel.app"],
+  method: ["POST", "GET" , "PUT", "DELETE"],
+  credentials: true}
+));
 app.use(bodyParser.json());
 
 const mongoURI = process.env.MONGO_URI;
