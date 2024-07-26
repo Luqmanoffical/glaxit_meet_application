@@ -10,7 +10,7 @@ import {format} from 'date-fns';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 5000 ;
 
 
 const corsConfig = {
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 const mongoURI = process.env.MONGO_URI;
 
-mongoose.connect(mongoURI, {dbName: 'Demodb', useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI, { dbName: 'Demodb' }) 
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
