@@ -1,16 +1,23 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
+
+  {
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "server.js",
+        "methods": ["GET", "PUT", "POST", "DELETE", "OPTIONS"]
+      }
+    ],
+    "functions": {
+      "server.js": {
+        "maxDuration": 60
+      }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js",
-      "methods":["GET", "PUT", "POST", "DELETE","OPTIONS"]
-    }
-  ]
+  
 }
