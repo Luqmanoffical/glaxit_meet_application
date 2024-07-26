@@ -12,8 +12,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ;
 
-app.use(cors(
-));
+const corsConfig = {
+  origin:"*",
+  methodS: ["POST", "GET" , "PUT", "DELETE"],
+  credentials: true}
+app.options("", cors (corsConfig));
+app.use(cors(corsConfig));
 
 app.get("/", (req, res) => {
   res.json("Hello World");
