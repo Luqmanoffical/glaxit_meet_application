@@ -12,10 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ;
 
-app.use(cors({
-  origin:[glaxit-meet-application.vercel.app],
-  method: ["POST", "GET" , "PUT", "DELETE"],
-  credentials: true}
+app.use(cors(
 ));
 
 app.get("/", (req, res) => {
